@@ -38,8 +38,8 @@
 // NOTE: Check these before publishing! (and remove β if appropriate)
 var DEBUG = false;
 var LOG = false;
-var GDC_TITLE = 'Docs to Markdown'; // formerly GD2md-html, formerly gd2md-html
-var GDC_VERSION = '1.0β30'; // based on 1.0β29
+var GDC_TITLE = 'OneCommunity Webpage Exporter'; // formerly GD2md-html, formerly gd2md-html
+var GDC_VERSION = '1.0'; // based on 1.0β29
 
 // Version notes: significant changes (latest on top). (files changed)
 // - 1.0β30: Close HTML list after partial selection. (gdc, html)

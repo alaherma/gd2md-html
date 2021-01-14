@@ -60,6 +60,13 @@ function convertToHTML(config) {
   return html.doHtml(config);
 }
 
+// This is the main public function the client will call (from sidebar.html).
+function convertToOneCommunity(config) {
+  gdc.init(gdc.docTypes.html);
+  // Pass config to conversion function.
+  return OneCommunity.doOneCommunity(config);
+}
+
 function convertText(text) {
   return text;
 }

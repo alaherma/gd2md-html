@@ -30,13 +30,10 @@ input[type="button"].invisible {background: transparent;border: none;font-size:0
 
 
 <!-- Top of sidebar UI elements. -->
-<input type="button" class="blue" value="Markdown" onclick="markdown()">
+<input type="button" class="blue" value="One Community Export" onclick="onecommunity()">
+<!--<input type="button" class="blue" value="Markdown" onclick="markdown()">-->
 <input type="button" class="blue" value="HTML" onclick="html()">
-
-<input
-  type="button" class="blue"
-  value="Help" onclick="help()"
->
+<input type="button" class="blue" value="Help" onclick="help()">
 <p>
 
 <!--
@@ -153,6 +150,23 @@ For more details, click the Docs link above.`
       .convertToMarkdown(config);
   }
   
+  // OneCommunity conversion.
+  function onecommunity() {  
+    setConfig();
+    var text = document.getElementById('text');
+    text.value = 'Converting this doc to HTML...';
+    text.value += '\n\n * Your output will appear here.';
+    text.value += '\n\n * Copy it to the wordpress webpage and enjoy the automated editions';
+    
+    // Call the main add-on function (convertX()) on the server.
+    // We also send the names of callback functions to call in case of
+    // success or error.
+    google.script.run
+      .withSuccessHandler(displayServerMessage)
+      .withFailureHandler(displayServerError)
+      .convertToOneCommunity(config);
+  }
+
   // HTML conversion.
   function html() {
     setConfig();
